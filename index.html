@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis Anti Kecurangan</title>
+</head>
+<body>
+    <h1>Selamat mengerjakan kuis!</h1>
+    <p>Pastikan Anda tidak menggunakan mode layar terbagi atau popup selama mengerjakan kuis.</p>
+    <script>
+        // Fungsi untuk menampilkan peringatan
+        function showWarning(message) {
+            alert(message);
+            window.location.href = "/diskualifikasi.html";
+        }
+
+        // Fungsi untuk mendeteksi mode split screen atau popup
+        function checkPopupOrSplitScreen() {
+            const height = window.innerHeight;
+            const availHeight = window.screen.availHeight;
+
+            console.log(`Window Height: ${height}, Available Height: ${availHeight}`);
+
+            // Jika tinggi jendela kurang dari 50% dari tinggi layar yang tersedia
+            if (height < availHeight * 0.5) {
+                showWarning("Jangan menggunakan mode layar terbagi atau popup selama kuis!");
+            }
+        }
+
+        let hasSwitchedTab = false;
+
+        // Event listener untuk mendeteksi perpindahan tab
+        document.addEventListener("visibilitychange", () => {
+            if (document.hidden) {
+                hasSwitchedTab = true;
+            } else if (hasSwitchedTab) {
+                showWarning("Anda tidak diperbolehkan berpindah tab selama kuis berlangsung!");
+            }
+        });
+
+        // Event listener untuk mendeteksi perubahan ukuran layar
+        window.addEventListener("resize", checkPopupOrSplitScreen);
+
+        // Periksa mode layar saat halaman dimuat
+        checkPopupOrSplitScreen();
+    </script>
+</body>
+</html>

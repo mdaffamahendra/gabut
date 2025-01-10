@@ -1,0 +1,127 @@
+:root {
+    --primary-color : rgb(87, 3, 3);
+    --font-color : #d2c5c5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--font-color);
+    font-family : "Poppins", sans-serif;
+    height: 2000px;
+    scroll-behavior: smooth;
+}
+
+
+/* Navbar */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .8em;
+    border-bottom: 1px solid var(--font-color);
+    background-color: var(--primary-color);
+    box-shadow: 1px 1px 1px rgba(0,0,0,.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+nav .brand {
+    text-transform: lowercase;
+    font-size: 1.5rem;
+}
+
+nav .brand h1 .special-color-brand {
+    color: red;
+    text-transform: uppercase;
+}
+
+nav .list-container {
+    margin-right: 4em;
+    height: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .list-container .list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    gap: 15px;
+}
+
+nav .list-container .list li {
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: .7s opacity;
+    -webkit-transition: .7s opacity;
+    -moz-transition: .7s opacity;
+    -ms-transition: .7s opacity;
+    -o-transition: .7s opacity;
+}
+
+nav .list-container .list li a {
+    color: var(--font-color);
+    text-decoration: none;
+}
+
+nav .list-container .list li:hover {
+    opacity: .5;
+    border-bottom: 1px solid var(--font-color);
+}
+
+
+/* Navbar End */
+
+/* Lobby */
+
+.lobby {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.lobby h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.lobby button {
+    margin-top: 1em;
+    background-color: var(--primary-color);
+    color: var(--font-color);
+    padding: 1em;
+    font-family: "Poppins", sans-serif;
+    border: 1px solid var(--font-color);
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transition: .6s ease-in-out;
+    -webkit-transition: .6s ease-in-out;
+    -moz-transition: .6s ease-in-out;
+    -ms-transition: .6s ease-in-out;
+    -o-transition: .6s ease-in-out;
+}
+
+.lobby button:hover {
+    color: var(--primary-color);
+    background-color: var(--font-color);
+}
+
+/* Lobby End */
+
